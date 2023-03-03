@@ -1,0 +1,12 @@
+#!/bin/bash -p
+
+ORIGIN="B"
+
+if [ -n "$1" ];then
+  ORIGIN=$1
+fi
+
+
+mvn clean install -B -DskipTests=true
+
+java -jar ./target/errorhandling.jar $ORIGIN
